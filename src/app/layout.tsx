@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/navbar";
 import { LanguageProvider } from "@/components/language-provider";
 import { Toaster } from "@/components/toaster";
 import Footer from "@/components/footer";
@@ -31,6 +32,7 @@ export default function RootLayout({
             <body className={inter.className}>
              <LanguageProvider>
                 <div className="flex flex-col min-h-screen">
+                    <Navbar />
                     <main className="flex-grow">{children}</main>
                     <Footer />
                 </div>
