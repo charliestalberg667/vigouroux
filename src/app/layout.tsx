@@ -1,8 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "../../../../Desktop/vigouroux/src/components/navbar";
 import { LanguageProvider } from "@/components/language-provider";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/toaster";
 import Footer from "@/components/footer";
 import React, { StrictMode } from "react";
 import { Analytics } from "@vercel/analytics/react"
@@ -32,7 +31,6 @@ export default function RootLayout({
             <body className={inter.className}>
              <LanguageProvider>
                 <div className="flex flex-col min-h-screen">
-                    <Navbar />
                     <main className="flex-grow">{children}</main>
                     <Footer />
                 </div>
