@@ -10,8 +10,20 @@ import {StrictMode} from "react";
 const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+  ],
   variable: "--font-montserrat-alternates",
+  display: "swap",
+  style: ["normal"],
 });
 
 export const metadata = {
