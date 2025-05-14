@@ -19,8 +19,6 @@ const Navbar = () => {
     },
   };
 
-  const { exploreShowroom } = content[language];
-
   const onLanguageChange = () => {
     setLanguage(language === "fr" ? "nl" : "fr");
     if (clickCount + 1 === 20) {

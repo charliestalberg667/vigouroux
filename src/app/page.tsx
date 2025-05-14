@@ -66,11 +66,52 @@ const translations = {
   },
 };
 
-function HomeDesktop({ content }: { content: Content }) {
+export default function Home() {
   const { language } = useLanguage();
-  const t = translations[language];
+  const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  return (
+  useEffect(() => {
+    setMounted(true);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1100);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const content: Record<string, Content> = {
+    fr: {
+      header1: "Votre toit.",
+      header2: "Notre expertise.",
+      learnMore: "découvrir nos services",
+      ourServices: "nos services de toiture",
+      descriptionRoofing: "Installation complète de toiture - qualité professionnelle et",
+      descriptionRenovation: "Rénovation complète de toiture - expertise garantie et",
+      available: "disponible",
+      service: "service",
+      professional: "professionnel",
+      roofingPrice: "Sur devis",
+      renovationPrice: "Sur devis",
+    },
+    nl: {
+      header1: "Uw dak.",
+      header2: "Onze expertise.",
+      learnMore: "ontdek onze diensten",
+      ourServices: "onze dakbedekking diensten",
+      descriptionRoofing: "Complete dakbedekking installatie - professionele kwaliteit en",
+      descriptionRenovation: "Complete dakrenovatie - gegarandeerde expertise en",
+      available: "beschikbaar",
+      service: "dienst",
+      professional: "professioneel",
+      roofingPrice: "Op offerte",
+      renovationPrice: "Op offerte",
+    },
+  };
+
+  if (!mounted) return null;
+  const currentContent = content[language] || content.fr;
+
+  return isDesktop ? (
     <div className="bg-white min-h-screen w-full">
       <Navbar />
       {/* Hero Section */}
@@ -101,7 +142,7 @@ function HomeDesktop({ content }: { content: Content }) {
             </h1>
             <a href="#contact" className="mt-4">
               <button className="font-montserrat p-[6px] rounded-xl text-lg font-semibold tracking-wider text-[#FF6F3C] px-2 flex items-center gap-2 bg-transparent border-none hover:text-[#3A506B] focus:outline-none bg-gray backdrop-blur-md">
-                {t.heroCta}
+                {translations[language].heroCta}
                 <svg width="32" height="20" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#FF6F3C" strokeWidth="2" />
                 </svg>
@@ -114,31 +155,31 @@ function HomeDesktop({ content }: { content: Content }) {
       {/* Services Section */}
       <section className="w-full py-16 px-2 md:px-0 bg-[#F7F7FA]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#FF6F3C] mb-12">{t.servicesTitle}</h2>
+          <h2 className="text-4xl font-bold text-[#FF6F3C] mb-12">{translations[language].servicesTitle}</h2>
           <ServiceCard
             image="/images/roof-installation.jpg"
-            alt={t.service1Title}
-            title={t.service1Title}
-            description={t.service1Desc}
-            buttonText={t.learnMore}
+            alt={translations[language].service1Title}
+            title={translations[language].service1Title}
+            description={translations[language].service1Desc}
+            buttonText={translations[language].learnMore}
             scrollTarget="service-1"
             buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
           />
           <ServiceCard
             image="/images/solar-panel-installation.jpg"
-            alt={t.service2Title}
-            title={t.service2Title}
-            description={t.service2Desc}
-            buttonText={t.learnMore}
+            alt={translations[language].service2Title}
+            title={translations[language].service2Title}
+            description={translations[language].service2Desc}
+            buttonText={translations[language].learnMore}
             scrollTarget="service-2"
             buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
           />
           <ServiceCard
             image="/images/insulation1.jpg"
-            alt={t.service3Title}
-            title={t.service3Title}
-            description={t.service3Desc}
-            buttonText={t.learnMore}
+            alt={translations[language].service3Title}
+            title={translations[language].service3Title}
+            description={translations[language].service3Desc}
+            buttonText={translations[language].learnMore}
             scrollTarget="service-3"
             buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
           />
@@ -149,20 +190,20 @@ function HomeDesktop({ content }: { content: Content }) {
       <section id="contact" className="w-full py-16 bg-[#F7F7FA]">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
           <div className="flex-1 bg-white rounded-md p-8 text-[#232B3E] flex flex-col justify-center min-h-[320px] border border-[#E5E7EB]">
-            <h3 className="text-2xl font-bold mb-4">{t.contactInfoTitle}</h3>
+            <h3 className="text-2xl font-bold mb-4">{translations[language].contactInfoTitle}</h3>
             <div className="flex flex-col gap-4 text-lg">
-              <span>{t.contactEmail}</span>
-              <span>{t.contactPhone}</span>
-              <span>{t.contactAddress}</span>
+              <span>{translations[language].contactEmail}</span>
+              <span>{translations[language].contactPhone}</span>
+              <span>{translations[language].contactAddress}</span>
             </div>
           </div>
           <form className="flex-1 bg-white rounded-md p-8 flex flex-col gap-4 min-h-[320px] border border-[#E5E7EB]" onSubmit={e => e.preventDefault()}>
-            <h3 className="text-2xl font-bold text-[#232B3E] mb-4">{t.contactFormTitle}</h3>
-            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={t.formName} required />
-            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={t.formEmail} type="email" required />
-            <textarea className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={t.formMessage} rows={4} required />
+            <h3 className="text-2xl font-bold text-[#232B3E] mb-4">{translations[language].contactFormTitle}</h3>
+            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formName} required />
+            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formEmail} type="email" required />
+            <textarea className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formMessage} rows={4} required />
             <button type="submit" className="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 mt-2 self-end hover:text-[#3A506B] transition-colors duration-200">
-              {t.formSend}
+              {translations[language].formSend}
               <svg width="24" height="16" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#FF6F3C" strokeWidth="2" />
               </svg>
@@ -174,21 +215,17 @@ function HomeDesktop({ content }: { content: Content }) {
       {/* Footer */}
       <Footer />
     </div>
-  );
-}
-
-function HomeMobile({ content }: { content: Content }) {
-  return (
+  ) : (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
       {/* Section 1 */}
       <section className="h-screen w-full snap-start relative">
         <div className="absolute bottom-[22vh] left-[5vw] text-white text-[5vh] z-10">
-          <h2>{content.header1}</h2>
-          <h2>{content.header2}</h2>
+          <h2>{currentContent.header1}</h2>
+          <h2>{currentContent.header2}</h2>
           <a href="#services">
             <button className="text-[2vh]">
               <div className="flex flex-row items-center bg-white/80 gap-4 p-3 rounded-[5px]">
-                <p className="text-[#4018FF] font-[montserrat] font-semibold">{content.learnMore}</p>
+                <p className="text-[#4018FF] font-[montserrat] font-semibold">{currentContent.learnMore}</p>
                 <svg width="30" height="23" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#4018FF" strokeWidth="2" />
                 </svg>
@@ -237,53 +274,4 @@ function HomeMobile({ content }: { content: Content }) {
       </section>
     </div>
   );
-}
-
-export default function Home() {
-  const { language } = useLanguage();
-  const [mounted, setMounted] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
-  const t = translations[language];
-
-  useEffect(() => {
-    setMounted(true);
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1100);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const content: Record<string, Content> = {
-    fr: {
-      header1: "Votre toit.",
-      header2: "Notre expertise.",
-      learnMore: "découvrir nos services",
-      ourServices: "nos services de toiture",
-      descriptionRoofing: "Installation complète de toiture - qualité professionnelle et",
-      descriptionRenovation: "Rénovation complète de toiture - expertise garantie et",
-      available: "disponible",
-      service: "service",
-      professional: "professionnel",
-      roofingPrice: "Sur devis",
-      renovationPrice: "Sur devis",
-    },
-    nl: {
-      header1: "Uw dak.",
-      header2: "Onze expertise.",
-      learnMore: "ontdek onze diensten",
-      ourServices: "onze dakbedekking diensten",
-      descriptionRoofing: "Complete dakbedekking installatie - professionele kwaliteit en",
-      descriptionRenovation: "Complete dakrenovatie - gegarandeerde expertise en",
-      available: "beschikbaar",
-      service: "dienst",
-      professional: "professioneel",
-      roofingPrice: "Op offerte",
-      renovationPrice: "Op offerte",
-    },
-  };
-
-  if (!mounted) return null;
-  const currentContent = content[language] || content.fr;
-
-  return isDesktop ? <HomeDesktop content={currentContent} /> : <HomeMobile content={currentContent} />;
 }
