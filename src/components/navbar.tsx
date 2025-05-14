@@ -10,15 +10,6 @@ const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const [clickCount, setClickCount] = useState(0);
 
-  const content = {
-    fr: {
-      exploreShowroom: "Explorer le showroom",
-    },
-    nl: {
-      exploreShowroom: "Ontdek de showroom",
-    },
-  };
-
   const onLanguageChange = () => {
     setLanguage(language === "fr" ? "nl" : "fr");
     if (clickCount + 1 === 20) {
