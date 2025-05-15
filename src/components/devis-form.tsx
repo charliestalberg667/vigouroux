@@ -74,6 +74,7 @@ export default function DevisForm({ language }: DevisFormProps) {
       // Reset form
       e.currentTarget.reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       toast({
         title: t.error,
         variant: "destructive",
