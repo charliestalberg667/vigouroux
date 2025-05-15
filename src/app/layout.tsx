@@ -27,11 +27,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "solarstock",
+  title: "Vigouroux",
   description:
-      "Kits solaire belgique | Solar Kits belgië",
+      "toiturier belgique | dakwerkers belgië",
   keywords:
-      "kits solaire belgique, solar kits belgië",
+      "toiturier belgique, dakwerkers belgië",
   robots: "index, follow",
 };
 
