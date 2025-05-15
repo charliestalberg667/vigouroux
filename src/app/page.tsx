@@ -138,7 +138,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center w-full">
               <button
-                className="bg-[#FF6F3C] text-white px-8 py-3 rounded-2xl text-lg font-semibold flex items-center gap-3 hover:bg-[#FF8F5C] transition-colors duration-300 ease-in-out"
+                className="group inline-flex items-center gap-2 bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/20 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-md font-semibold"
                 onClick={() => {
                   const section = document.getElementById('services');
                   if (section) {
@@ -164,7 +164,7 @@ export default function Home() {
               </h2>
               <p className="text-xl text-gray-600">{services.subtitle}</p>
             </div>
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 gap-12">
               <ServiceCard
                 image={services.items[0].image}
                 alt={services.items[0].alt}
@@ -208,7 +208,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
                     <MdEmail className="text-[#FF6F3C] text-2xl" />
                   </div>
                   <div>
@@ -217,7 +217,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
                     <MdPhone className="text-[#FF6F3C] text-2xl" />
                   </div>
                   <div>
@@ -226,7 +226,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
                     <MdLocationOn className="text-[#FF6F3C] text-2xl" />
                   </div>
                   <div>
@@ -235,7 +235,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <form className="space-y-6">
+              <form className="space-y-6 bg-white p-8 rounded-2xl shadow-sm">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     {contact.form.name}
@@ -243,7 +243,7 @@ export default function Home() {
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
                   />
                 </div>
                 <div>
@@ -253,7 +253,7 @@ export default function Home() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
                   />
                 </div>
                 <div>
@@ -263,7 +263,7 @@ export default function Home() {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
                   />
                 </div>
                 <div>
@@ -273,7 +273,7 @@ export default function Home() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
                   ></textarea>
                 </div>
                 <button

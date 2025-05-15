@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { FaUser, FaPhone, FaMapMarkerAlt, FaAt } from "react-icons/fa";
 import DevisForm from "@/components/devis-form";
-
+import Footer from "@/components/footer";
 export default function Service1Page() {
   const { language } = useLanguage();
   const content = {
@@ -96,24 +96,55 @@ export default function Service1Page() {
   };
   const t = content[language];
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-[#F7F7FA] py-16 px-4">
-      <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-        <Image src={t.image} alt={t.title} width={320} height={180} className="rounded-xl mb-8 object-cover w-full h-48" />
-        <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent text-center">{t.title}</h1>
-        <p className="text-gray-700 text-lg mb-8 text-justify">{t.heroDesc}</p>
+    <main className="min-h-screen bg-white flex flex-col items-center">
+      {/* Hero section with image */}
+      <div className="w-full relative h-screen">
+        <Image 
+          src={t.image} 
+          alt={t.title} 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 pt-64">
+          <div className="max-w-3xl w-full flex flex-col items-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white text-center drop-shadow-lg tracking-tight mt-16">{t.title}</h1>
+            <p className="text-white/90 text-lg md:text-xl text-center leading-relaxed mb-8">{t.heroDesc}</p>
+            <Link 
+              href="#content" 
+              className="group inline-flex items-center gap-2 bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/20 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-md font-semibold"
+            >
+              {language === 'fr' ? 'En savoir plus' : 'Meer weten'}
+              <svg 
+                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Content sections */}
+      <div id="content" className="w-full max-w-3xl px-4 md:px-8 flex flex-col gap-12 py-16">
         {t.sections.map((section, idx) => (
-          <div key={idx} className="mb-8 w-full">
-            <h2 className="text-xl font-bold mb-2 text-[#FF6F3C]">{section.title}</h2>
-            <p className="text-gray-700 whitespace-pre-line text-justify">{section.text}</p>
+          <div key={idx} className="bg-white border-b border-gray-100 pb-8">
+            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">{section.title}</h2>
+            <p className="text-gray-700 whitespace-pre-line text-justify leading-relaxed">{section.text}</p>
           </div>
         ))}
-        <DevisForm language={language} />
-        <Link href="/#services" className="self-center mt-12">
-          <button className="bg-[#FF6F3C] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#FF8F5C] transition-colors duration-300">
-            {t.back}
-          </button>
-        </Link>
       </div>
+
+      {/* Devis form */}
+      <div className="w-full max-w-3xl px-4 md:px-8 mb-12">
+        <DevisForm language={language} />
+      </div>
+
+      <Footer />
     </main>
   );
 } 
