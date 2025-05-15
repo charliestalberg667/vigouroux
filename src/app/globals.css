@@ -140,3 +140,27 @@ a {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+
+.emoji {
+  height: 1.5em;
+  width: 1.5em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.emoji-text {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.2em;
+  line-height: 1.5;
+  white-space: pre-line;
+  letter-spacing: normal;
+}
+
+.emoji-text span {
+  display: inline;
+  vertical-align: middle;
+}

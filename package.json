@@ -10,6 +10,8 @@
     "knip": "knip"
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "@emoji-mart/react": "^1.1.1",
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.1",
@@ -22,6 +24,9 @@
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.14",
     "dotenv": "^16.4.7",
+    "emoji-mart": "^5.6.0",
+    "emoji-picker-react": "^4.12.2",
+    "emoji-toolkit": "^9.0.1",
     "lucide-react": "^0.471.1",
     "next": "^15.3.2",
     "nodemailer": "^6.9.16",
@@ -32,7 +37,8 @@
     "react-typed": "^2.0.12",
     "resend": "^4.1.2",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "twemoji": "^14.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

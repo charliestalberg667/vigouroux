@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import DevisForm from "@/components/devis-form";
 import Footer from "@/components/footer";
+import { EmojiText } from "@/components/emoji-text";
+
 export default function Service1Page() {
   const { language } = useLanguage();
   const content = {
@@ -130,7 +132,7 @@ export default function Service1Page() {
         {t.sections.map((section, idx) => (
           <div key={idx} className="bg-white border-b border-gray-100 pb-8">
             <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">{section.title}</h2>
-            <p className="text-gray-700 whitespace-pre-line text-justify leading-relaxed">{section.text}</p>
+            <EmojiText text={section.text} className="text-gray-700 whitespace-pre-line text-justify leading-relaxed" />
           </div>
         ))}
       </div>
