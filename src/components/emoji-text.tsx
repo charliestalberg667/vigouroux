@@ -1,4 +1,3 @@
-import emoji from 'emoji-toolkit';
 import React from 'react';
 
 interface EmojiTextProps {
