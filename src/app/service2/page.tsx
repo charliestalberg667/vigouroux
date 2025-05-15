@@ -4,12 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import DevisForm from "@/components/devis-form";
 import Footer from "@/components/footer";
+import { EmojiText } from "@/components/emoji-text";
+import { 
+  HomeIcon, 
+  ClipboardDocumentListIcon, 
+  SparklesIcon, 
+  CubeIcon, 
+  BanknotesIcon, 
+  QuestionMarkCircleIcon 
+} from "@heroicons/react/24/outline";
+
 export default function Service1Page() {
   const { language } = useLanguage();
   const content = {
     fr: {
-      title: "Isolation",
-      desc: "Nous proposons des solutions d'isolation thermique et acoustique pour améliorer le confort et l'efficacité énergétique de votre maison. Une bonne isolation permet de réduire vos factures d'énergie et d'augmenter la valeur de votre bien.",
+      title: "Isolation thermique et acoustique",
+      desc: "Nous proposons des solutions d'isolation complètes pour améliorer le confort et l'efficacité énergétique de votre maison. Réduisez vos factures d'énergie tout en augmentant votre confort quotidien.",
       back: "Retour aux services",
       image: "/images/isolation.png",
       form: {
@@ -24,33 +34,33 @@ export default function Service1Page() {
       sections: [
         {
           title: "Types d'isolation",
-          text: "Nous réalisons l'isolation de toitures inclinées, plates, combles et murs. Nous utilisons des matériaux performants adaptés à chaque configuration : laine de verre, laine de roche, panneaux PIR, mousse polyuréthane, etc.",
+          text: "Isolation des murs\n• Isolation par l'intérieur\n• Isolation par l'extérieur\n\nIsolation des combles\n• Combles perdus\n• Combles aménagés\n\nIsolation des sols\n• Planchers bas\n• Dalles flottantes\n\nIsolation acoustique\n• Murs mitoyens\n• Plafonds",
         },
         {
           title: "Étapes d'une isolation réussie",
-          text: "1. Analyse thermique et devis personnalisé\n2. Préparation du chantier\n3. Pose de l'isolant\n4. Traitement des ponts thermiques\n5. Finitions et contrôle qualité",
+          text: "1. Diagnostic et étude thermique\n• Analyse des déperditions\n• Devis personnalisé\n\n2. Choix des matériaux\n• Performance thermique\n• Qualité acoustique\n\n3. Préparation des surfaces\n• Nettoyage\n• Repérage\n\n4. Installation de l'isolation\n• Pose professionnelle\n• Finitions soignées\n\n5. Contrôle qualité\n• Tests d'étanchéité\n• Vérification des performances",
         },
         {
           title: "Avantages de l'isolation",
-          text: "- Réduction des pertes de chaleur\n- Diminution de la facture énergétique\n- Confort thermique été comme hiver\n- Valorisation de votre bien immobilier",
+          text: "Économies d'énergie\n• Réduction des factures\n• Performance thermique\n\nConfort amélioré\n• Température constante\n• Isolation acoustique\n\nValorisation du bien\n• Certificat PEB\n• Valeur immobilière\n\nImpact environnemental\n• Réduction CO2\n• Écologie\n\nSanté et bien-être\n• Qualité de l'air\n• Confort acoustique",
         },
         {
-          title: "Matériaux utilisés",
-          text: "Nous sélectionnons des isolants certifiés et performants : laine minérale, panneaux rigides, mousse projetée, etc. Nous vous conseillons selon vos besoins et votre budget.",
+          title: "Matériaux d'isolation",
+          text: "Laine minérale\n• Performance thermique\n• Isolation acoustique\n\nLaine de verre\n• Conductivité thermique\n• Durabilité\n\nLaine de roche\n• Résistance au feu\n• Isolation phonique\n\nMousse polyuréthane\n• Haute performance\n• Étanchéité\n\nMatériaux biosourcés\n• Écologiques\n• Renouvelables",
         },
         {
           title: "Aides et primes",
-          text: "De nombreuses primes sont disponibles pour l'isolation en Belgique. Nous vous accompagnons dans les démarches administratives.",
+          text: "Primes régionales\n• Wallonie\n• Bruxelles\n• Flandre\n\nAccompagnement administratif\n• Dossiers de demande\n• Suivi des démarches\n\nCertificats verts\n• Économies d'énergie\n• Valorisation",
         },
         {
           title: "FAQ",
-          text: "\n- Quelle épaisseur d'isolant choisir ?\n  Cela dépend du matériau et des normes en vigueur. Nous vous conseillons sur mesure.\n- L'isolation est-elle rentable ?\n  Oui, l'investissement est rapidement amorti grâce aux économies d'énergie.\n- Faut-il quitter la maison pendant les travaux ?\n  Non, la plupart des chantiers se font sans gêne majeure.",
+          text: "Quelle épaisseur d'isolation choisir ?\n• Selon le matériau\n• Selon la zone\n\nCombien de temps pour rentabiliser l'investissement ?\n• 3-5 ans en moyenne\n• Selon les primes\n\nFaut-il un permis pour l'isolation ?\n• Dépend du type de travaux\n• Gestion administrative incluse",
         },
       ],
     },
     nl: {
-      title: "Isolatie",
-      desc: "Wij bieden thermische en akoestische isolatieoplossingen om het comfort en de energie-efficiëntie van uw woning te verbeteren. Goede isolatie verlaagt uw energierekening en verhoogt de waarde van uw huis.",
+      title: "Thermische en akoestische isolatie",
+      desc: "Wij bieden complete isolatieoplossingen om het comfort en de energie-efficiëntie van uw woning te verbeteren. Verlaag uw energiefacturen terwijl u uw dagelijks comfort verhoogt.",
       back: "Terug naar diensten",
       image: "/images/isolation.png",
       form: {
@@ -65,82 +75,163 @@ export default function Service1Page() {
       sections: [
         {
           title: "Soorten isolatie",
-          text: "Wij isoleren hellende en platte daken, zolders en muren. We gebruiken hoogwaardige materialen aangepast aan elke situatie: glaswol, rotswol, PIR-platen, gespoten schuim, enz.",
+          text: "Muurisolatie\n• Binnenisolatie\n• Buitenisolatie\n\nDakisolatie\n• Niet-bewoonde zolder\n• Bewoonde zolder\n\nVloerisolatie\n• Benedenverdieping\n• Zwevende dekvloer\n\nAkoestische isolatie\n• Scheidingswanden\n• Plafonds",
         },
         {
           title: "Stappen van een geslaagde isolatie",
-          text: "1. Thermische analyse en persoonlijke offerte\n2. Voorbereiding van de werf\n3. Plaatsing van het isolatiemateriaal\n4. Behandeling van koudebruggen\n5. Afwerking en kwaliteitscontrole",
+          text: "1. Diagnose en thermische studie\n• Analyse van warmteverlies\n• Persoonlijke offerte\n\n2. Keuze van materialen\n• Thermische prestaties\n• Akoestische kwaliteit\n\n3. Voorbereiding van oppervlakken\n• Reiniging\n• Markering\n\n4. Installatie van isolatie\n• Professionele plaatsing\n• Nette afwerking\n\n5. Kwaliteitscontrole\n• Luchtdichtheidstests\n• Prestatieverificatie",
         },
         {
           title: "Voordelen van isolatie",
-          text: "- Minder warmteverlies\n- Lagere energiefactuur\n- Thermisch comfort in zomer en winter\n- Meerwaarde voor uw woning",
+          text: "Energiebesparing\n• Lagere facturen\n• Thermische prestaties\n\nVerbeterd comfort\n• Constante temperatuur\n• Akoestische isolatie\n\nMeerwaarde van het pand\n• EPC-certificaat\n• Vastgoedwaarde\n\nMilieu-impact\n• CO2-reductie\n• Ecologie\n\nGezondheid en welzijn\n• Luchtkwaliteit\n• Akoestisch comfort",
         },
         {
-          title: "Gebruikte materialen",
-          text: "Wij kiezen voor gecertificeerde en performante isolatiematerialen: minerale wol, harde platen, gespoten schuim, enz. Wij adviseren u volgens uw behoeften en budget.",
+          title: "Isolatiematerialen",
+          text: "Minerale wol\n• Thermische prestaties\n• Akoestische isolatie\n\nGlaswol\n• Thermische geleidbaarheid\n• Duurzaamheid\n\nSteenwol\n• Brandwerendheid\n• Geluidsisolatie\n\nPolyurethaanschuim\n• Hoge prestaties\n• Luchtdichtheid\n\nBiobased materialen\n• Ecologisch\n• Hernieuwbaar",
         },
         {
           title: "Premies en hulp",
-          text: "Er zijn veel premies beschikbaar voor isolatie in België. Wij begeleiden u bij de administratieve stappen.",
+          text: "Regionale premies\n• Wallonië\n• Brussel\n• Vlaanderen\n\nAdministratieve begeleiding\n• Aanvraagdossiers\n• Opvolging van procedures\n\nGroene certificaten\n• Energiebesparing\n• Waardering",
         },
         {
           title: "FAQ",
-          text: "\n- Welke dikte isolatie heb ik nodig?\n  Dat hangt af van het materiaal en de geldende normen. Wij geven u advies op maat.\n- Is isolatie rendabel?\n  Ja, de investering wordt snel terugverdiend door de energiebesparing.\n- Moet ik het huis verlaten tijdens de werken?\n  Nee, meestal kunnen de werken zonder grote hinder doorgaan.",
+          text: "Welke isolatiedikte kiezen?\n• Afhankelijk van materiaal\n• Afhankelijk van zone\n\nHoe lang duurt het om de investering terug te verdienen?\n• Gemiddeld 3-5 jaar\n• Afhankelijk van premies\n\nIs een vergunning nodig voor isolatie?\n• Hangt af van type werk\n• Administratief beheer inbegrepen",
         },
       ],
     },
   };
   const t = content[language];
   return (
-    <main className="min-h-screen bg-white flex flex-col items-center">
-      {/* Hero section with image */}
-      <div className="w-full relative h-screen">
-        <Image 
-          src={t.image} 
-          alt={t.title} 
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 pt-64">
-          <div className="max-w-3xl w-full flex flex-col items-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white text-center drop-shadow-lg tracking-tight mt-16">{t.title}</h1>
-            <p className="text-white/90 text-lg md:text-xl text-center leading-relaxed mb-8">{t.desc}</p>
+    <main className="min-h-screen bg-gradient-to-b from-white via-gray-50/50 to-white flex flex-col items-center relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#FF6F3C]/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 right-20 w-96 h-96 bg-[#FF6F3C]/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#FF6F3C]/5 to-transparent rounded-full blur-3xl" />
+      </div>
+
+      {/* Hero section with professional design */}
+      <div className="w-full relative h-[80vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image 
+            src={t.image} 
+            alt={t.title} 
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/60" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8">
+          <div className="max-w-4xl w-full flex flex-col items-center space-y-4">
+            <div className="relative">
+              <div className="w-16 h-0.5 bg-[#FF6F3C] mb-2" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white text-center tracking-tight">
+              {t.title}
+            </h1>
+            <p className="text-white/90 text-lg md:text-xl text-center leading-relaxed mb-10 max-w-2xl font-light">
+              {t.desc}
+            </p>
             <Link 
               href="#content" 
               className="group inline-flex items-center gap-2 bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/20 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-md font-semibold"
             >
               {language === 'fr' ? 'En savoir plus' : 'Meer weten'}
-              <svg 
-                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5v14M12 19l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Content sections */}
-      <div id="content" className="w-full max-w-3xl px-4 md:px-8 flex flex-col gap-12 py-16">
+      {/* Content sections with professional styling */}
+      <div id="content" className="w-full max-w-5xl px-4 md:px-8 flex flex-col gap-16 py-24">
         {t.sections.map((section, idx) => (
-          <div key={idx} className="bg-white border-b border-gray-100 pb-8">
-            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">{section.title}</h2>
-            <p className="text-gray-700 whitespace-pre-line text-justify leading-relaxed">{section.text}</p>
+          <div 
+            key={idx} 
+            className="group bg-white p-10 border border-gray-100 hover:border-gray-200 transition-all duration-300"
+          >
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-0.5 bg-[#FF6F3C]" />
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  {section.title}
+                </h2>
+              </div>
+              <div className="w-16 h-16 text-[#FF6F3C] p-2">
+                {idx === 0 && <HomeIcon className="w-full h-full" />}
+                {idx === 1 && <ClipboardDocumentListIcon className="w-full h-full" />}
+                {idx === 2 && <SparklesIcon className="w-full h-full" />}
+                {idx === 3 && <CubeIcon className="w-full h-full" />}
+                {idx === 4 && <BanknotesIcon className="w-full h-full" />}
+                {idx === 5 && <QuestionMarkCircleIcon className="w-full h-full" />}
+              </div>
+            </div>
+            <EmojiText 
+              text={section.text} 
+              className="text-gray-600 whitespace-pre-line text-justify leading-relaxed" 
+            />
           </div>
         ))}
       </div>
 
-      {/* Devis form */}
-      <div className="w-full max-w-3xl px-4 md:px-8 mb-12">
-        <DevisForm language={language} />
+      {/* Professional quote button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button
+          onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
+          className="group relative bg-[#FF6F3C] hover:bg-[#FF8F5C] text-white px-6 py-3.5 rounded-sm shadow-sm transform hover:translate-y-[-1px] transition-all duration-300 flex items-center gap-3 text-sm tracking-wider uppercase"
+        >
+          <span className="relative z-10 hidden md:inline">{language === 'fr' ? 'Demander un devis' : 'Offerte aanvragen'}</span>
+          <svg 
+            className="w-4 h-4 relative z-10" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              d="M8 10H16M8 14H16M8 18H16M4 6H20C21.1046 6 22 6.89543 22 8V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V8C2 6.89543 2.89543 6 4 6Z" 
+              stroke="currentColor" 
+              strokeWidth="1.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Devis form with professional styling */}
+      <div id="quote-form" className="w-full max-w-4xl px-4 md:px-8 mb-24">
+        <div className="bg-white p-10 border border-gray-100">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-0.5 bg-[#FF6F3C]" />
+            <h2 className="text-2xl font-semibold text-gray-900">
+              {t.form.title}
+            </h2>
+          </div>
+          <DevisForm language={language} />
+        </div>
       </div>
 
       <Footer />
     </main>
   );
-} 
+}
+
+// Add these styles to your global CSS file
+const styles = `
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.6s ease-out 0.15s forwards;
+  opacity: 0;
+}
+`; 
