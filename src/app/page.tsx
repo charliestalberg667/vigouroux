@@ -23,7 +23,7 @@ export default function Home() {
           {
             title: "Toiture",
             description: "Installation, réparation et entretien de toitures pour tous types de bâtiments. Nous utilisons des matériaux de haute qualité pour garantir la durabilité et l'esthétique de votre toit.",
-            image: "/images/metre.png",
+            image: "/images/toiture.jpg",
             alt: "Toiture",
             buttonText: "En savoir plus",
             quality: "100",
@@ -76,7 +76,7 @@ export default function Home() {
           {
             title: "Dakbedekking",
             description: "Installatie, reparatie en onderhoud van daken voor alle soorten gebouwen. We gebruiken hoogwaardige materialen om de duurzaamheid en esthetiek van uw dak te garanderen.",
-            image: "/images/metre.png",
+            image: "/images/toiture.jpg",
             alt: "Dakbedekking",
             buttonText: "Meer weten",
           },
