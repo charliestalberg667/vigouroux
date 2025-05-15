@@ -2,8 +2,6 @@
 import { useLanguage } from "@/components/language-provider";
 import Image from "next/image";
 import Link from "next/link";
-import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
-import { FaUser, FaPhone, FaMapMarkerAlt, FaAt } from "react-icons/fa";
 import DevisForm from "@/components/devis-form";
 import Footer from "@/components/footer";
 export default function Service1Page() {

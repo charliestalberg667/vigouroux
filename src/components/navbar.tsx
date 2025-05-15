@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { FR, NL } from "country-flag-icons/react/3x2";
 import Image from "next/image";
-import Footer from "@/components/footer";
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();

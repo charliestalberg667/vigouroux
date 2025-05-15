@@ -28,8 +28,8 @@ const formContent = {
 };
 
 export default function DevisForm({ language }: DevisFormProps) {
-  const lang = language || useLanguage().language;
-  const t = formContent[lang];
+  const { language: lang } = useLanguage();
+  const t = formContent[language || lang];
   return (
     <div className="w-full mt-12">
       <div className="bg-[#FF6F3C] rounded-3xl p-8 md:p-12 flex flex-col w-full">
