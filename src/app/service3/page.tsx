@@ -217,21 +217,4 @@ export default function Service1Page() {
       <Footer />
     </main>
   );
-}
-
-// Add these styles to your global CSS file
-const styles = `
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-fade-in-delay {
-  animation: fadeIn 0.6s ease-out 0.15s forwards;
-  opacity: 0;
-}
-`; 
+} 
