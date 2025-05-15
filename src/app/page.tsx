@@ -76,7 +76,7 @@ export default function Home() {
           {
             title: "Dakbedekking",
             description: "Installatie, reparatie en onderhoud van daken voor alle soorten gebouwen. We gebruiken hoogwaardige materialen om de duurzaamheid en esthetiek van uw dak te garanderen.",
-            image: "/images/roof-installation.jpg",
+            image: "/images/metre.png",
             alt: "Dakbedekking",
             buttonText: "Meer weten",
           },
@@ -97,7 +97,7 @@ export default function Home() {
           {
             title: "Isolatie",
             description: "Thermische en akoestische isolatieoplossingen om het comfort en de energie-efficiëntie van uw huis te verbeteren. Verlaag uw energierekening terwijl u uw comfort verhoogt.",
-            image: "/images/insulation1.jpg",
+            image: "/images/isolation.png",
             alt: "Isolatie",
             buttonText: "Meer weten",
           },
@@ -243,7 +243,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Adresse</h3>
-                    <p className="text-gray-600 group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">Maasdai 167, 1502 Halle, Belgique</p>
+                    <p className="text-gray-600 group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">Maasdal 167, 1502 Halle, Belgique</p>
                   </div>
                 </div>
               </div>

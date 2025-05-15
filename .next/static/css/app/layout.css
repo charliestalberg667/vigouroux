@@ -791,6 +791,9 @@ a {
 .max-w-6xl {
   max-width: 72rem;
 }
+.max-w-none {
+  max-width: none;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -866,6 +869,9 @@ a {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-16 {
+  gap: 4rem;
 }
 .gap-x-8 {
   column-gap: 2rem;
@@ -1013,6 +1019,9 @@ a {
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
 .from-\[\#F7F7FA\] {
   --tw-gradient-from: #F7F7FA var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(247 247 250 / 0) var(--tw-gradient-to-position);
@@ -1038,9 +1047,18 @@ a {
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-gray-50 {
+  --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .via-black\/40 {
   --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.via-\[\#FF8F5C\] {
+  --tw-gradient-to: rgb(255 143 92 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #FF8F5C var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .to-\[\#F7F7FA\] {
   --tw-gradient-to: #F7F7FA var(--tw-gradient-to-position);
@@ -1056,6 +1074,9 @@ a {
 }
 .to-white {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
+}
+.to-\[\#FF6F3C\] {
+  --tw-gradient-to: #FF6F3C var(--tw-gradient-to-position);
 }
 .bg-clip-text {
   background-clip: text;
@@ -1384,6 +1405,11 @@ a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -1575,6 +1601,10 @@ a {
 
 .hover\:border-white\/40:hover {
   border-color: rgb(255 255 255 / 0.4);
+}
+
+.hover\:border-\[\#FF6F3C\]\/20:hover {
+  border-color: rgb(255 111 60 / 0.2);
 }
 
 .hover\:bg-\[\#FF6F3C\]:hover {

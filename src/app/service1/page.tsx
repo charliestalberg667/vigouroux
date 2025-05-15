@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import DevisForm from "@/components/devis-form";
 import Footer from "@/components/footer";
+import { EmojiText } from "@/components/emoji-text";
+
 export default function Service1Page() {
   const { language } = useLanguage();
   const content = {
@@ -13,27 +15,27 @@ export default function Service1Page() {
       sections: [
         {
           title: "Types de toitures",
-          text: "Nous intervenons sur tous types de toitures : plates, inclinées, en tuiles, ardoises, zinc ou EPDM. Chaque type de toiture nécessite une expertise spécifique que nous maîtrisons parfaitement.",
+          text: "🏠 Nous intervenons sur tous types de toitures :\n\n🏢 Plates : Toits-terrasses, terrasses accessibles\n🏡 Inclinées : Traditionnelles, modernes\n\n🛠️ Matériaux :\n   🧱 Tuiles : Traditionnelles, modernes\n   🪨 Ardoises : Naturelles, synthétiques\n   ⚡ Zinc : Classique, prélaqué\n   🛡️ EPDM : Membranes synthétiques\n\nChaque type de toiture nécessite une expertise spécifique que nous maîtrisons parfaitement.",
         },
         {
           title: "Étapes du chantier",
-          text: "1. Analyse et devis personnalisé\n2. Préparation du chantier\n3. Dépose éventuelle de l'ancienne toiture\n4. Pose de la nouvelle structure et de l'isolation\n5. Installation de la couverture\n6. Finitions et nettoyage du chantier",
+          text: "📋 1. Analyse et devis personnalisé\n   📊 Étude de faisabilité\n   💰 Devis détaillé\n\n🏗️ 2. Préparation du chantier\n   📐 Mesures précises\n   🛠️ Installation du chantier\n\n🗑️ 3. Dépose éventuelle de l'ancienne toiture\n   🧹 Nettoyage complet\n   ♻️ Évacuation des déchets\n\n🏠 4. Pose de la nouvelle structure et de l'isolation\n   🔨 Structure porteuse\n   🧱 Isolation thermique\n\n🛠️ 5. Installation de la couverture\n   🧱 Pose des matériaux\n   🔍 Contrôle qualité\n\n✨ 6. Finitions et nettoyage du chantier\n   🧹 Nettoyage final\n   ✅ Inspection finale",
         },
         {
           title: "Matériaux utilisés",
-          text: "Nous sélectionnons des matériaux de qualité supérieure : tuiles terre cuite, ardoises naturelles, zinc, membranes synthétiques, etc. Nous vous conseillons selon vos besoins et votre budget.",
+          text: "🛠️ Nous sélectionnons des matériaux de qualité supérieure :\n\n🧱 Tuiles terre cuite\n   🏺 Traditionnelles\n   🎨 Coloris variés\n\n🪨 Ardoises naturelles\n   💎 Haute qualité\n   🌧️ Excellente étanchéité\n\n⚡ Zinc\n   🔄 Durabilité\n   🎨 Finitions modernes\n\n🛡️ Membranes synthétiques\n   💧 Étanchéité optimale\n   🔥 Résistance aux UV\n\nNous vous conseillons selon vos besoins et votre budget.",
         },
         {
           title: "Garanties et sécurité",
-          text: "Nos travaux sont couverts par la garantie décennale. Nous respectons toutes les normes de sécurité et d'étanchéité en vigueur en Belgique.",
+          text: "🛡️ Nos travaux sont couverts par la garantie décennale.\n\n✅ Normes de sécurité :\n   🏗️ Structure\n   🔥 Résistance au feu\n   💨 Ventilation\n\n💧 Étanchéité :\n   🌧️ Protection contre les intempéries\n   🏠 Isolation thermique\n   🔍 Tests d'étanchéité\n\nNous respectons toutes les normes en vigueur en Belgique.",
         },
         {
           title: "Conseils d'entretien",
-          text: "Un entretien régulier prolonge la durée de vie de votre toiture : nettoyage, vérification des gouttières, contrôle de l'étanchéité. Nous proposons des contrats d'entretien adaptés.",
+          text: "🔧 Un entretien régulier prolonge la durée de vie de votre toiture :\n\n🧹 Nettoyage régulier\n   🍂 Débris végétaux\n   🧪 Traitement anti-mousse\n\n🌧️ Vérification des gouttières\n   🚰 Écoulement\n   🧹 Dégagement\n\n🔍 Contrôle de l'étanchéité\n   💧 Points sensibles\n   🛠️ Réparations\n\n📝 Nous proposons des contrats d'entretien adaptés.",
         },
         {
           title: "FAQ",
-          text: "\n- Combien de temps dure un chantier de toiture ?\n  En général, de quelques jours à deux semaines selon la surface.\n- Faut-il un permis ?\n  Oui, dans certains cas. Nous vous accompagnons dans les démarches.\n- Proposez-vous des solutions d'isolation ?\n  Oui, nous intégrons l'isolation à nos prestations.",
+          text: "\n❓ Combien de temps dure un chantier de toiture ?\n  ⏳ En général, de quelques jours à deux semaines selon la surface.\n  📊 Planning détaillé fourni\n\n❓ Faut-il un permis ?\n  📝 Oui, dans certains cas. Nous vous accompagnons dans les démarches.\n  📋 Gestion administrative incluse\n\n❓ Proposez-vous des solutions d'isolation ?\n  ✅ Oui, nous intégrons l'isolation à nos prestations.\n  🏠 Solutions adaptées à chaque type de toiture",
         },
       ],
       form: {
@@ -56,27 +58,27 @@ export default function Service1Page() {
       sections: [
         {
           title: "Soorten daken",
-          text: "Wij werken op alle soorten daken: plat, hellend, met pannen, leien, zink of EPDM. Elk type dak vereist specifieke expertise die wij beheersen.",
+          text: "🏠 Wij werken op alle soorten daken :\n\n🏢 Plat : Dakterrassen, toegankelijke terrassen\n🏡 Hellend : Traditioneel, modern\n\n🛠️ Materialen :\n   🧱 Pannen : Traditioneel, modern\n   🪨 Leien : Natuurlijk, synthetisch\n   ⚡ Zink : Klassiek, voorgecoat\n   🛡️ EPDM : Synthetische membranen\n\nElk type dak vereist specifieke expertise die wij beheersen.",
         },
         {
           title: "Fasen van het project",
-          text: "1. Analyse en persoonlijke offerte\n2. Voorbereiding van de werf\n3. Eventuele verwijdering van het oude dak\n4. Plaatsing van de nieuwe structuur en isolatie\n5. Installatie van de dakbedekking\n6. Afwerking en reiniging van de werf",
+          text: "📋 1. Analyse en persoonlijke offerte\n   📊 Haalbaarheidsstudie\n   💰 Gedetailleerde offerte\n\n🏗️ 2. Voorbereiding van de werf\n   📐 Nauwkeurige metingen\n   🛠️ Werfinrichting\n\n🗑️ 3. Eventuele verwijdering van het oude dak\n   🧹 Volledige reiniging\n   ♻️ Afvoer van afval\n\n🏠 4. Plaatsing van de nieuwe structuur en isolatie\n   🔨 Dragende structuur\n   🧱 Thermische isolatie\n\n🛠️ 5. Installatie van de dakbedekking\n   🧱 Plaatsing van materialen\n   🔍 Kwaliteitscontrole\n\n✨ 6. Afwerking en reiniging van de werf\n   🧹 Eindreiniging\n   ✅ Eindinspectie",
         },
         {
           title: "Gebruikte materialen",
-          text: "Wij kiezen voor materialen van topkwaliteit: keramische pannen, natuurleien, zink, synthetische membranen, enz. Wij adviseren u volgens uw behoeften en budget.",
+          text: "🛠️ Wij kiezen voor materialen van topkwaliteit :\n\n🧱 Keramische pannen\n   🏺 Traditioneel\n   🎨 Diverse kleuren\n\n🪨 Natuurleien\n   💎 Hoge kwaliteit\n   🌧️ Uitstekende waterdichtheid\n\n⚡ Zink\n   🔄 Duurzaamheid\n   🎨 Moderne afwerkingen\n\n🛡️ Synthetische membranen\n   💧 Optimale waterdichtheid\n   🔥 UV-bestendigheid\n\nWij adviseren u volgens uw behoeften en budget.",
         },
         {
           title: "Garantie en veiligheid",
-          text: "Onze werken zijn gedekt door de tienjarige garantie. Wij respecteren alle geldende veiligheids- en waterdichtheidsnormen in België.",
+          text: "🛡️ Onze werken zijn gedekt door de tienjarige garantie.\n\n✅ Veiligheidsnormen :\n   🏗️ Structuur\n   🔥 Brandwerendheid\n   💨 Ventilatie\n\n💧 Waterdichtheid :\n   🌧️ Bescherming tegen weersomstandigheden\n   🏠 Thermische isolatie\n   🔍 Waterdichtheidstests\n\nWij respecteren alle geldende normen in België.",
         },
         {
           title: "Onderhoudstips",
-          text: "Regelmatig onderhoud verlengt de levensduur van uw dak: reiniging, controle van de goten, controle van de waterdichtheid. Wij bieden aangepaste onderhoudscontracten aan.",
+          text: "🔧 Regelmatig onderhoud verlengt de levensduur van uw dak :\n\n🧹 Regelmatige reiniging\n   🍂 Plantaardig afval\n   🧪 Anti-mos behandeling\n\n🌧️ Controle van de goten\n   🚰 Afvoer\n   🧹 Vrijmaken\n\n🔍 Controle van de waterdichtheid\n   💧 Kwetsbare punten\n   🛠️ Reparaties\n\n📝 Wij bieden aangepaste onderhoudscontracten aan.",
         },
         {
           title: "FAQ",
-          text: "\n- Hoelang duurt een dakproject?\n  Meestal enkele dagen tot twee weken, afhankelijk van de oppervlakte.\n- Is een vergunning nodig?\n  Ja, in sommige gevallen. Wij begeleiden u bij de formaliteiten.\n- Biedt u ook isolatie aan?\n  Ja, wij integreren isolatie in onze diensten.",
+          text: "\n❓ Hoelang duurt een dakproject?\n  ⏳ Meestal enkele dagen tot twee weken, afhankelijk van de oppervlakte.\n  📊 Gedetailleerde planning beschikbaar\n\n❓ Is een vergunning nodig?\n  📝 Ja, in sommige gevallen. Wij begeleiden u bij de formaliteiten.\n  📋 Administratief beheer inbegrepen\n\n❓ Biedt u ook isolatie aan?\n  ✅ Ja, wij integreren isolatie in onze diensten.\n  🏠 Oplossingen aangepast aan elk type dak",
         },
       ],
       form: {
@@ -128,18 +130,25 @@ export default function Service1Page() {
       </div>
 
       {/* Content sections */}
-      <div id="content" className="w-full max-w-3xl px-4 md:px-8 flex flex-col gap-12 py-16">
+      <div id="content" className="w-full max-w-4xl px-4 md:px-8 flex flex-col gap-16 py-20">
         {t.sections.map((section, idx) => (
-          <div key={idx} className="bg-white border-b border-gray-100 pb-8">
-            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">{section.title}</h2>
-            <p className="text-gray-700 whitespace-pre-line text-justify leading-relaxed">{section.text}</p>
+          <div key={idx} className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:border-[#FF6F3C]/20 transition-all duration-300">
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#FF6F3C] via-[#FF8F5C] to-[#FF6F3C] bg-clip-text text-transparent">{section.title}</h2>
+            <div className="prose prose-lg max-w-none">
+              <EmojiText 
+                text={section.text} 
+                className="text-gray-700 whitespace-pre-line text-justify leading-relaxed"
+              />
+            </div>
           </div>
         ))}
       </div>
 
       {/* Devis form */}
-      <div className="w-full max-w-3xl px-4 md:px-8 mb-12">
-        <DevisForm language={language} />
+      <div className="w-full max-w-4xl px-4 md:px-8 mb-16">
+        <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <DevisForm language={language} />
+        </div>
       </div>
 
       <Footer />
