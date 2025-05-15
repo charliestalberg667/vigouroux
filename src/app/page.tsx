@@ -36,6 +36,13 @@ export default function Home() {
             buttonText: "En savoir plus",
           },
           {
+            title: "Pose de panneaux solaires",
+            description: "Installation professionnelle de panneaux solaires pour une énergie renouvelable et économique. Optimisez votre consommation énergétique et réduisez votre empreinte carbone avec nos solutions sur mesure.",
+            image: "/images/solar-panel-installation.jpg",
+            alt: "Panneaux solaires",
+            buttonText: "En savoir plus",
+          },
+          {
             title: "Isolation",
             description: "Solutions d'isolation thermique et acoustique pour améliorer le confort et l'efficacité énergétique de votre maison. Réduisez vos factures d'énergie tout en augmentant votre confort.",
             image: "/images/isolation.png",
@@ -78,6 +85,13 @@ export default function Home() {
             description: "Installatie en onderhoud van efficiënte dakgootsystemen om uw eigendom te beschermen tegen waterschade. Op maat gemaakte oplossingen voor optimaal regenwaterbeheer.",
             image: "/images/solar-panel-installation.jpg",
             alt: "Dakgoten",
+            buttonText: "Meer weten",
+          },
+          {
+            title: "Zonnepanelen installatie",
+            description: "Professionele installatie van zonnepanelen voor hernieuwbare en economische energie. Optimaliseer uw energieverbruik en verlaag uw ecologische voetafdruk met onze op maat gemaakte oplossingen.",
+            image: "/images/solar-panel-installation.jpg",
+            alt: "Zonnepanelen",
             buttonText: "Meer weten",
           },
           {
@@ -171,16 +185,14 @@ export default function Home() {
                 title={services.items[0].title}
                 description={services.items[0].description}
                 buttonText={services.items[0].buttonText}
-                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
                 buttonLink="/service1"
               />
               <ServiceCard
-                image={services.items[1].image}
-                alt={services.items[1].alt}
-                title={services.items[1].title}
-                description={services.items[1].description}
-                buttonText={services.items[1].buttonText}
-                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
+                image={services.items[3].image}
+                alt={services.items[3].alt}
+                title={services.items[3].title}
+                description={services.items[3].description}
+                buttonText={services.items[3].buttonText}
                 buttonLink="/service2"
               />
               <ServiceCard
@@ -189,9 +201,9 @@ export default function Home() {
                 title={services.items[2].title}
                 description={services.items[2].description}
                 buttonText={services.items[2].buttonText}
-                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
                 buttonLink="/service3"
               />
+
             </div>
           </div>
         </section>

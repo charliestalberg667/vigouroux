@@ -2,97 +2,145 @@
 import { useLanguage } from "@/components/language-provider";
 import Image from "next/image";
 import Link from "next/link";
-import { FaUser, FaPhone, FaMapMarkerAlt, FaAt } from "react-icons/fa";
-
-export default function Service3Page() {
+import DevisForm from "@/components/devis-form";
+import Footer from "@/components/footer";
+export default function Service1Page() {
   const { language } = useLanguage();
   const content = {
     fr: {
-      title: "Isolation de la toiture",
-      desc: "Nous proposons des solutions d'isolation thermique et acoustique pour améliorer le confort et l'efficacité énergétique de votre maison. Une bonne isolation permet de réduire vos factures d'énergie et d'augmenter la valeur de votre bien.",
+      title: "Pose de panneaux solaires",
+      desc: "Nous proposons des solutions d'installation de panneaux solaires pour une énergie renouvelable et économique. Optimisez votre consommation énergétique et réduisez votre empreinte carbone avec nos solutions sur mesure.",
       back: "Retour aux services",
-      image: "/images/isolation.png",
+      image: "/images/solar-panel-installation.jpg",
       form: {
-        title: "demande de devis gratuit :",
-        name: "nom",
-        firstname: "prénom",
+        title: "Demander un devis gratuit",
+        name: "Nom",
+        firstname: "Prénom",
         email: "Email",
-        phone: "nr de téléphone",
-        address: "adresse",
-        send: "terminer",
+        phone: "Téléphone",
+        address: "Adresse",
+        send: "Envoyer",
       },
+      sections: [
+        {
+          title: "Types d'installations solaires",
+          text: "☀️ Nous proposons l'installation de panneaux photovoltaïques, thermiques et hybrides. Nous adaptons la solution à vos besoins : autoconsommation, revente d'énergie, ou combinaison des deux.",
+        },
+        {
+          title: "Étapes d'une installation réussie",
+          text: "📋 1. Étude de faisabilité et devis personnalisé\n🏠 2. Analyse de la toiture et orientation\n🔧 3. Installation des panneaux et onduleurs\n⚡ 4. Mise en service et raccordement\n📚 5. Formation et suivi",
+        },
+        {
+          title: "Avantages des panneaux solaires",
+          text: "✅ Production d'énergie renouvelable\n💰 Réduction de la facture énergétique\n🔌 Indépendance énergétique\n📈 Valorisation de votre bien immobilier\n🌱 Impact positif sur l'environnement",
+        },
+        {
+          title: "Matériaux et équipements",
+          text: "🔍 Nous utilisons des panneaux solaires de haute qualité, des onduleurs performants et des systèmes de fixation adaptés à votre toiture. Nous sélectionnons les meilleures marques du marché.",
+        },
+        {
+          title: "Aides et primes",
+          text: "💶 De nombreuses primes sont disponibles pour l'installation de panneaux solaires en Belgique. Nous vous accompagnons dans les démarches administratives et l'obtention des aides.",
+        },
+        {
+          title: "FAQ",
+          text: "\n❓ Quelle est la durée de vie des panneaux solaires ?\n  ⏳ En moyenne 25-30 ans avec une garantie de performance.\n❓ Combien de temps pour rentabiliser l'investissement ?\n  💰 Généralement 5-7 ans selon votre consommation et les primes.\n❓ Faut-il une autorisation pour l'installation ?\n  📝 Oui, nous gérons les démarches administratives nécessaires.",
+        },
+      ],
     },
     nl: {
-      title: "Dakisolatie",
-      desc: "Wij bieden thermische en akoestische isolatieoplossingen om het comfort en de energie-efficiëntie van uw woning te verbeteren. Goede isolatie verlaagt uw energierekening en verhoogt de waarde van uw huis.",
+      title: "Zonnepanelen installatie",
+      desc: "Wij bieden professionele installatie van zonnepanelen voor hernieuwbare en economische energie. Optimaliseer uw energieverbruik en verlaag uw ecologische voetafdruk met onze op maat gemaakte oplossingen.",
       back: "Terug naar diensten",
-      image: "/images/insulation1.jpg",
+      image: "/images/solar-panel-installation.jpg",
       form: {
-        title: "gratis offerte aanvragen :",
-        name: "naam",
-        firstname: "voornaam",
+        title: "Gratis offerte aanvragen",
+        name: "Naam",
+        firstname: "Voornaam",
         email: "E-mail",
-        phone: "telefoonnummer",
-        address: "adres",
-        send: "voltooien",
+        phone: "Telefoonnummer",
+        address: "Adres",
+        send: "Versturen",
       },
+      sections: [
+        {
+          title: "Soorten zonnepanelen",
+          text: "☀️ Wij installeren fotovoltaïsche, thermische en hybride panelen. We passen de oplossing aan aan uw behoeften: zelfverbruik, energieverkoop of een combinatie van beide.",
+        },
+        {
+          title: "Stappen van een geslaagde installatie",
+          text: "📋 1. Haalbaarheidsstudie en persoonlijke offerte\n🏠 2. Analyse van het dak en oriëntatie\n🔧 3. Installatie van panelen en omvormers\n⚡ 4. Inbedrijfstelling en aansluiting\n📚 5. Training en opvolging",
+        },
+        {
+          title: "Voordelen van zonnepanelen",
+          text: "✅ Productie van hernieuwbare energie\n💰 Lagere energiefactuur\n🔌 Energie-onafhankelijkheid\n📈 Meerwaarde voor uw woning\n🌱 Positieve impact op het milieu",
+        },
+        {
+          title: "Materialen en apparatuur",
+          text: "🔍 Wij gebruiken hoogwaardige zonnepanelen, performante omvormers en bevestigingssystemen aangepast aan uw dak. We selecteren de beste merken op de markt.",
+        },
+        {
+          title: "Premies en hulp",
+          text: "💶 Er zijn veel premies beschikbaar voor zonnepanelen in België. Wij begeleiden u bij de administratieve stappen en het verkrijgen van de premies.",
+        },
+        {
+          title: "FAQ",
+          text: "\n❓ Wat is de levensduur van zonnepanelen?\n  ⏳ Gemiddeld 25-30 jaar met een prestatiegarantie.\n❓ Hoe lang duurt het om de investering terug te verdienen?\n  💰 Meestal 5-7 jaar, afhankelijk van uw verbruik en de premies.\n❓ Is een vergunning nodig voor de installatie?\n  📝 Ja, wij verzorgen de nodige administratieve procedures.",
+        },
+      ],
     },
   };
   const t = content[language];
   return (
-    <main className="min-h-screen bg-white py-16 px-4">
-      <div className="max-w-2xl mx-auto flex flex-col items-center">
-        <Image src={t.image} alt={t.title} width={320} height={180} className="rounded-lg mb-8 object-cover w-full h-48" />
-        <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent text-center">{t.title}</h1>
-        <p className="text-gray-700 text-lg mb-8 text-justify">{t.desc}</p>
-        <Link href="/#services" className="self-center mb-16">
-          <button className="group inline-flex items-center gap-2 bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/20 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-md font-semibold">
-            {t.back}
-          </button>
-        </Link>
-        <div className="w-full">
-          <div className="bg-white border border-gray-100 rounded-lg p-8 md:p-12 flex flex-col w-full">
-            <h2 className="text-2xl font-semibold mb-8 text-gray-800">{t.form.title}</h2>
-            <form className="w-full grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={e => e.preventDefault()}>
-              <div className="flex flex-col gap-4">
-                <label className="text-gray-700 text-base mb-1">{t.form.name}</label>
-                <div className="relative">
-                  <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF6F3C] text-lg" />
-                  <input className="pl-10 pr-4 py-3 rounded-lg w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 outline-none focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20" placeholder={t.form.name} required />
-                </div>
-                <label className="text-gray-700 text-base mb-1">{t.form.firstname}</label>
-                <div className="relative">
-                  <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF6F3C] text-lg" />
-                  <input className="pl-10 pr-4 py-3 rounded-lg w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 outline-none focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20" placeholder={t.form.firstname} required />
-                </div>
-                <label className="text-gray-700 text-base mb-1">{t.form.email}</label>
-                <div className="relative">
-                  <FaAt className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF6F3C] text-lg" />
-                  <input className="pl-10 pr-4 py-3 rounded-lg w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 outline-none focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20" placeholder={t.form.email} type="email" required />
-                </div>
-              </div>
-              <div className="flex flex-col gap-4 justify-end">
-                <label className="text-gray-700 text-base mb-1">{t.form.phone}</label>
-                <div className="relative">
-                  <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF6F3C] text-lg" />
-                  <input className="pl-10 pr-4 py-3 rounded-lg w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 outline-none focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20" placeholder={t.form.phone} required />
-                </div>
-                <label className="text-gray-700 text-base mb-1">{t.form.address}</label>
-                <div className="relative">
-                  <FaMapMarkerAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF6F3C] text-lg" />
-                  <input className="pl-10 pr-4 py-3 rounded-lg w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 outline-none focus:border-[#FF6F3C] focus:ring-1 focus:ring-[#FF6F3C]/20" placeholder={t.form.address} required />
-                </div>
-                <button type="submit" className="mt-6 w-full flex items-center justify-center gap-2 bg-[#FF6F3C] text-white text-lg font-semibold rounded-lg py-3 transition-all duration-300 hover:bg-[#FF8F5C]">
-                  {t.form.send}
-                  <svg width="32" height="20" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </button>
-              </div>
-            </form>
+    <main className="min-h-screen bg-white flex flex-col items-center">
+      {/* Hero section with image */}
+      <div className="w-full relative h-screen">
+        <Image 
+          src={t.image} 
+          alt={t.title} 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 pt-64">
+          <div className="max-w-3xl w-full flex flex-col items-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white text-center drop-shadow-lg tracking-tight mt-16">{t.title}</h1>
+            <p className="text-white/90 text-lg md:text-xl text-center leading-relaxed mb-8">{t.desc}</p>
+            <Link 
+              href="#content" 
+              className="group inline-flex items-center gap-2 bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/20 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-md font-semibold"
+            >
+              {language === 'fr' ? 'En savoir plus' : 'Meer weten'}
+              <svg 
+                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* Content sections */}
+      <div id="content" className="w-full max-w-3xl px-4 md:px-8 flex flex-col gap-12 py-16">
+        {t.sections.map((section, idx) => (
+          <div key={idx} className="bg-white border-b border-gray-100 pb-8">
+            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">{section.title}</h2>
+            <p className="text-gray-700 whitespace-pre-line text-justify leading-relaxed">{section.text}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Devis form */}
+      <div className="w-full max-w-3xl px-4 md:px-8 mb-12">
+        <DevisForm language={language} />
+      </div>
+
+      <Footer />
     </main>
   );
 } 

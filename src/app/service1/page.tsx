@@ -89,7 +89,7 @@ export default function Service1Page() {
         send: "voltooien",
       },
       back: "Terug naar diensten",
-      image: "/images/roof-installation.jpg",
+      image: "/images/metre.png",
     },
   };
   const t = content[language];
