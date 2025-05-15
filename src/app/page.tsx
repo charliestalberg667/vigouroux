@@ -1,277 +1,293 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useLanguage } from "@/components/language-provider";
-import Footer from "@/components/footer";
 import React from "react";
-import Image from "next/image";
+import { useLanguage } from "@/components/language-provider";
 import ServiceCard from "@/components/service-card";
-import Navbar from "@/components/navbar";
-
-interface Content {
-  header1: string;
-  header2: string;
-  learnMore: string;
-  ourServices: string;
-  descriptionRoofing: string;
-  descriptionRenovation: string;
-  available: string;
-  roofingPrice: string;
-  renovationPrice: string;
-  service: string;
-  professional: string;
-}
-
-const translations = {
-  fr: {
-    heroHeadline: "Votre spécialiste de la toiture en Belgique",
-    heroCta: "demander un devis gratuit",
-    servicesTitle: "Nos services :",
-    service1Title: "Votre toit de A à Z",
-    service1Desc: "nous nous occupons de tout votre toit de A à Z que ce soit toiture, isolation, zinguerie et peut être même panneaux solaire",
-    service2Title: "pose de panneaux solaire",
-    service2Desc: "nous nous occupons de placer vos panneaux solaires et de les brancher à votre onduleur dans l'objectif de rentabiliser votre toit",
-    service3Title: "Isolation de la toiture",
-    service3Desc: "nous plaçons l'isolation dans votre toiture pour limiter la dissipation de la chaleur",
-    learnMore: "En savoir plus",
-    contactInfoTitle: "Informations de contact",
-    contactEmail: "vigouroux.geoffray@gmail.com",
-    contactPhone: "+32 476 68 20 36",
-    contactAddress: "Maasdai 167, 1502 Halle, Belgique",
-    contactFormTitle: "Contact",
-    formName: "Nom",
-    formEmail: "Email",
-    formMessage: "Message",
-    formSend: "Envoyer",
-  },
-  nl: {
-    heroHeadline: "Uw dakspecialist in België",
-    heroCta: "gratis offerte aanvragen",
-    servicesTitle: "Onze diensten:",
-    service1Title: "Uw dak van A tot Z",
-    service1Desc: "wij zorgen voor uw hele dak van A tot Z, inclusief dakbedekking, isolatie, zinkwerk en eventueel zelfs zonnepanelen",
-    service2Title: "plaatsing van zonnepanelen",
-    service2Desc: "wij plaatsen uw zonnepanelen en sluiten ze aan op uw omvormer om uw dak rendabel te maken",
-    service3Title: "Dakisolatie",
-    service3Desc: "wij plaatsen isolatie in uw dak om warmteverlies te beperken",
-    learnMore: "Meer weten",
-    contactInfoTitle: "Contactinformatie",
-    contactEmail: "vigouroux.geoffray@gmail.com",
-    contactPhone: "+32 476 68 20 36",
-    contactAddress: "Maasdai 167, 1502 Halle, België",
-    contactFormTitle: "Contact",
-    formName: "Naam",
-    formEmail: "E-mail",
-    formMessage: "Bericht",
-    formSend: "Verzenden",
-  },
-};
+import Image from "next/image";
+import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const { language } = useLanguage();
-  const [mounted, setMounted] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1100);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const content: Record<string, Content> = {
+  const content = {
     fr: {
-      header1: "Votre toit.",
-      header2: "Notre expertise.",
-      learnMore: "découvrir nos services",
-      ourServices: "nos services de toiture",
-      descriptionRoofing: "Installation complète de toiture - qualité professionnelle et",
-      descriptionRenovation: "Rénovation complète de toiture - expertise garantie et",
-      available: "disponible",
-      service: "service",
-      professional: "professionnel",
-      roofingPrice: "Sur devis",
-      renovationPrice: "Sur devis",
+      hero: {
+        title: "Votre expert en toiture",
+        subtitle: "Depuis 50 ans, nous assurons la qualité et la durabilité de votre toit",
+        cta: "Demander un devis",
+      },
+      services: {
+        title: "Nos Services",
+        subtitle: "Des solutions adaptées à vos besoins",
+        items: [
+          {
+            title: "Toiture",
+            description: "Installation, réparation et entretien de toitures pour tous types de bâtiments. Nous utilisons des matériaux de haute qualité pour garantir la durabilité et l'esthétique de votre toit.",
+            image: "/images/metre.png",
+            alt: "Toiture",
+            buttonText: "En savoir plus",
+            quality: "100",
+          },
+          {
+            title: "Gouttières",
+            description: "Installation et maintenance de systèmes de gouttières efficaces pour protéger votre propriété contre les dommages causés par l'eau. Solutions sur mesure pour une gestion optimale des eaux pluviales.",
+            image: "/images/vicer.png",
+            alt: "Gouttières",
+            buttonText: "En savoir plus",
+          },
+          {
+            title: "Isolation",
+            description: "Solutions d'isolation thermique et acoustique pour améliorer le confort et l'efficacité énergétique de votre maison. Réduisez vos factures d'énergie tout en augmentant votre confort.",
+            image: "/images/isolation.png",
+            alt: "Isolation",
+            buttonText: "En savoir plus",
+          },
+        ],
+      },
+      contact: {
+        title: "Contactez-nous",
+        subtitle: "Nous sommes là pour vous aider",
+        form: {
+          name: "Nom",
+          email: "Email",
+          phone: "Téléphone",
+          message: "Message",
+          submit: "Envoyer",
+        },
+      },
     },
     nl: {
-      header1: "Uw dak.",
-      header2: "Onze expertise.",
-      learnMore: "ontdek onze diensten",
-      ourServices: "onze dakbedekking diensten",
-      descriptionRoofing: "Complete dakbedekking installatie - professionele kwaliteit en",
-      descriptionRenovation: "Complete dakrenovatie - gegarandeerde expertise en",
-      available: "beschikbaar",
-      service: "dienst",
-      professional: "professioneel",
-      roofingPrice: "Op offerte",
-      renovationPrice: "Op offerte",
+      hero: {
+        title: "Uw dakbedekkingsexpert",
+        subtitle: "Al 50 jaar zorgen wij voor kwaliteit en duurzaamheid van uw dak",
+        cta: "Offerte aanvragen",
+      },
+      services: {
+        title: "Onze Diensten",
+        subtitle: "Oplossingen op maat van uw behoeften",
+        items: [
+          {
+            title: "Dakbedekking",
+            description: "Installatie, reparatie en onderhoud van daken voor alle soorten gebouwen. We gebruiken hoogwaardige materialen om de duurzaamheid en esthetiek van uw dak te garanderen.",
+            image: "/images/roof-installation.jpg",
+            alt: "Dakbedekking",
+            buttonText: "Meer weten",
+          },
+          {
+            title: "Dakgoten",
+            description: "Installatie en onderhoud van efficiënte dakgootsystemen om uw eigendom te beschermen tegen waterschade. Op maat gemaakte oplossingen voor optimaal regenwaterbeheer.",
+            image: "/images/solar-panel-installation.jpg",
+            alt: "Dakgoten",
+            buttonText: "Meer weten",
+          },
+          {
+            title: "Isolatie",
+            description: "Thermische en akoestische isolatieoplossingen om het comfort en de energie-efficiëntie van uw huis te verbeteren. Verlaag uw energierekening terwijl u uw comfort verhoogt.",
+            image: "/images/insulation1.jpg",
+            alt: "Isolatie",
+            buttonText: "Meer weten",
+          },
+        ],
+      },
+      contact: {
+        title: "Contacteer ons",
+        subtitle: "We staan voor u klaar",
+        form: {
+          name: "Naam",
+          email: "E-mail",
+          phone: "Telefoon",
+          message: "Bericht",
+          submit: "Versturen",
+        },
+      },
     },
   };
 
-  if (!mounted) return null;
-  const currentContent = content[language] || content.fr;
+  const { hero, services, contact } = content[language];
 
-  return isDesktop ? (
-    <div className="bg-white min-h-screen w-full">
-      <Navbar />
-      {/* Hero Section */}
-      <section className="relative w-full h-screen flex flex-col justify-center items-center text-white" style={{backgroundImage: 'url(/images/fond1.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="absolute inset-0 bg-black/40 z-0" />
-        <div className="relative z-10 flex flex-col items-center w-full pt-24 pb-16">
-          <div className="flex flex-col items-center mb-8">
-            <div className="flex flex-col items-center mb-4">
+  return (
+    <>
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative h-screen flex items-center justify-center">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/fond.png"
+              alt="Hero"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </div>
+          <div className="relative z-10 text-center justify-center text-white px-4 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center mb-8">
               <Image
                 src={language === 'fr' ? '/images/depuis50ans.png' : '/images/sinds50jaar.png'}
                 alt={language === 'fr' ? 'depuis 50 ans' : 'sinds 50 jaar'}
-                width={320}
-                height={240}
-                className="mb-24"
+                width={220}
+                height={80}
+                className="mb-[12vh]"
                 priority
               />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center leading-tight mb-6">
-              {language === 'fr' ? (
-                <>
-                  Votre spécialiste de la toiture<br />en Belgique
-                </>
-              ) : (
-                <>
-                  Uw dakspecialist<br />in België
-                </>
-              )}
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              {hero.title}
             </h1>
-            <a href="#contact" className="mt-4">
-              <button className="font-montserrat p-[6px] rounded-xl text-lg font-semibold tracking-wider text-[#FF6F3C] px-2 flex items-center gap-2 bg-transparent border-none hover:text-[#3A506B] focus:outline-none bg-gray backdrop-blur-md">
-                {translations[language].heroCta}
-                <svg width="32" height="20" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#FF6F3C" strokeWidth="2" />
+            <p className="text-xl md:text-2xl mb-8 text-gray-200">
+              {hero.subtitle}
+            </p>
+            <div className="flex justify-center w-full">
+              <button
+                className="bg-[#FF6F3C] text-white px-8 py-3 rounded-2xl text-lg font-semibold flex items-center gap-3 hover:bg-[#FF8F5C] transition-colors duration-300 ease-in-out"
+                onClick={() => {
+                  const section = document.getElementById('services');
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                {language === 'fr' ? 'En savoir plus' : 'Meer weten'}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5v14M12 19l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="w-full py-16 px-2 md:px-0 bg-[#F7F7FA]">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#FF6F3C] mb-12">{translations[language].servicesTitle}</h2>
-          <ServiceCard
-            image="/images/roof-installation.jpg"
-            alt={translations[language].service1Title}
-            title={translations[language].service1Title}
-            description={translations[language].service1Desc}
-            buttonText={translations[language].learnMore}
-            scrollTarget="service-1"
-            buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
-          />
-          <ServiceCard
-            image="/images/solar-panel-installation.jpg"
-            alt={translations[language].service2Title}
-            title={translations[language].service2Title}
-            description={translations[language].service2Desc}
-            buttonText={translations[language].learnMore}
-            scrollTarget="service-2"
-            buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
-          />
-          <ServiceCard
-            image="/images/insulation1.jpg"
-            alt={translations[language].service3Title}
-            title={translations[language].service3Title}
-            description={translations[language].service3Desc}
-            buttonText={translations[language].learnMore}
-            scrollTarget="service-3"
-            buttonClassName="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 hover:text-[#3A506B] transition-colors duration-200"
-          />
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="w-full py-16 bg-[#F7F7FA]">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
-          <div className="flex-1 bg-white rounded-md p-8 text-[#232B3E] flex flex-col justify-center min-h-[320px] border border-[#E5E7EB]">
-            <h3 className="text-2xl font-bold mb-4">{translations[language].contactInfoTitle}</h3>
-            <div className="flex flex-col gap-4 text-lg">
-              <span>{translations[language].contactEmail}</span>
-              <span>{translations[language].contactPhone}</span>
-              <span>{translations[language].contactAddress}</span>
             </div>
           </div>
-          <form className="flex-1 bg-white rounded-md p-8 flex flex-col gap-4 min-h-[320px] border border-[#E5E7EB]" onSubmit={e => e.preventDefault()}>
-            <h3 className="text-2xl font-bold text-[#232B3E] mb-4">{translations[language].contactFormTitle}</h3>
-            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formName} required />
-            <input className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formEmail} type="email" required />
-            <textarea className="rounded px-4 py-3 text-black placeholder-gray-500 border border-[#E5E7EB]" placeholder={translations[language].formMessage} rows={4} required />
-            <button type="submit" className="font-montserrat text-lg font-semibold tracking-wider text-[#FF6F3C] bg-gray backdrop-blur-md rounded-xl p-[6px] px-2 flex items-center gap-2 mt-2 self-end hover:text-[#3A506B] transition-colors duration-200">
-              {translations[language].formSend}
-              <svg width="24" height="16" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#FF6F3C" strokeWidth="2" />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <Footer />
-    </div>
-  ) : (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      {/* Section 1 */}
-      <section className="h-screen w-full snap-start relative">
-        <div className="absolute bottom-[22vh] left-[5vw] text-white text-[5vh] z-10">
-          <h2>{currentContent.header1}</h2>
-          <h2>{currentContent.header2}</h2>
-          <a href="#services">
-            <button className="text-[2vh]">
-              <div className="flex flex-row items-center bg-white/80 gap-4 p-3 rounded-[5px]">
-                <p className="text-[#4018FF] font-[montserrat] font-semibold">{currentContent.learnMore}</p>
-                <svg width="30" height="23" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 13.8462H45.5M45.5 13.8462C38.9733 13.5897 25.9198 10.4615 25.9198 0M45.5 13.8462C38.9733 14.1026 25.9198 16.9231 25.9198 26.1538" stroke="#4018FF" strokeWidth="2" />
-                </svg>
+        {/* Services Section */}
+        <section id="services" className="py-20 bg-gradient-to-b from-white to-[#F7F7FA]">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">
+                {services.title}
+              </h2>
+              <p className="text-xl text-gray-600">{services.subtitle}</p>
+            </div>
+            <div className="space-y-8">
+              <ServiceCard
+                image={services.items[0].image}
+                alt={services.items[0].alt}
+                title={services.items[0].title}
+                description={services.items[0].description}
+                buttonText={services.items[0].buttonText}
+                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
+                buttonLink="/service1"
+              />
+              <ServiceCard
+                image={services.items[1].image}
+                alt={services.items[1].alt}
+                title={services.items[1].title}
+                description={services.items[1].description}
+                buttonText={services.items[1].buttonText}
+                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
+                buttonLink="/service2"
+              />
+              <ServiceCard
+                image={services.items[2].image}
+                alt={services.items[2].alt}
+                title={services.items[2].title}
+                description={services.items[2].description}
+                buttonText={services.items[2].buttonText}
+                buttonClassName="inline-flex items-center gap-2 border-2 border-[#FF6F3C] rounded-2xl px-4 py-2 text-[#FF6F3C] font-bold text-base md:text-lg bg-white hover:bg-[#FF6F3C] hover:text-white transition-all duration-300 ease-in-out"
+                buttonLink="/service3"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 bg-gradient-to-b from-[#F7F7FA] to-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#FF6F3C] to-[#FF8F5C] bg-clip-text text-transparent">
+                {contact.title}
+              </h2>
+              <p className="text-xl text-gray-600">{contact.subtitle}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4 group">
+                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <MdEmail className="text-[#FF6F3C] text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Email</h3>
+                    <p className="text-gray-600 group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">vigouroux.geoffray@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <MdPhone className="text-[#FF6F3C] text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Téléphone</h3>
+                    <p className="text-gray-600 group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">+32 476 68 20 36</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="p-4 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <MdLocationOn className="text-[#FF6F3C] text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Adresse</h3>
+                    <p className="text-gray-600 group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">Maasdai 167, 1502 Halle, Belgique</p>
+                  </div>
+                </div>
               </div>
-            </button>
-          </a>
-        </div>
-        <Image
-          src="/images/fond.png"
-          alt="fond"
-          fill
-          priority
-          className="object-cover"
-        />
-      </section>
-
-      {/* New Services Section */}
-      <section id="services" className="w-full px-2 py-10 bg-[#0A0A0A]">
-        <h2 className="text-3xl font-bold text-[#A259FF] mb-8">Nos services :</h2>
-        <ServiceCard
-          image="/images/roofing1.jpg"
-          alt="Travaux de toiture"
-          title="Votre toit de A à Z"
-          description="nous nous occupons de tout votre toit de A à Z que ce soit toiture, isolation, zinguerie et peut être même panneaux solaire"
-          buttonText="En savoir plus"
-        />
-        <ServiceCard
-          image="/images/solar1.jpg"
-          alt="Pose de panneaux solaires"
-          title="pose de panneaux solaire"
-          description="nous nous occupons de placer vos panneaux solaires et de les brancher à votre onduleur dans l'objectif de rentabiliser votre toit"
-          buttonText="En savoir plus"
-        />
-        <ServiceCard
-          image="/images/insulation1.jpg"
-          alt="Isolation de la toiture"
-          title="Isolation de la toiture"
-          description="nous plaçons l'isolation dans votre toiture pour limiter la dissipation de la chaleur"
-          buttonText="En savoir plus"
-        />
-      </section>
-
-      {/* Footer */}
-      <section className="snap-start w-full">
-        <Footer />
-      </section>
-    </div>
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    {contact.form.name}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    {contact.form.email}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    {contact.form.phone}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    {contact.form.message}
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#FF6F3C] focus:ring-2 focus:ring-[#FF6F3C]/20 outline-none transition-all duration-300 ease-in-out"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#FF6F3C] text-white px-6 py-3 rounded-xl text-lg font-semibold hover:bg-[#FF8F5C] transition-colors duration-300 ease-in-out"
+                >
+                  {contact.form.submit}
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

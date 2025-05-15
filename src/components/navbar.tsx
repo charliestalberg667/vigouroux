@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-16 mx-7 gap-8  ">
         <div className="flex items-center gap-4 p-[6px] rounded-xl bg-gray backdrop-blur-md">
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center font-montserrat font-semibold navEllement text-[#FF6F3C] tracking-wider ">
+            <Link href="/" className="flex items-center font-montserrat font-bold navEllement text-[#FF6F3C] tracking-normal ">
               <Image
                 src="/images/logoorange.png"
                 alt="Logo"
