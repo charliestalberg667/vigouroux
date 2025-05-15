@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       to: 'cevceceecc@gmail.com',
       subject: subject,
       html: html,
-      reply_to: email,
+      replyTo: email,
     });
 
     return NextResponse.json(data);
