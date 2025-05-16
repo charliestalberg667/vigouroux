@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       `;
 
     const data = await resend.emails.send({
-      from: 'Vigouroux <onboarding@resend.dev>',
+      from: 'Vigouroux.com',
       to: 'cevceceecc@gmail.com',
       subject: subject,
       html: html,
