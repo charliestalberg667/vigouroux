@@ -221,8 +221,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
-                    <MdEmail className="text-[#FF6F3C] text-2xl" />
+                  <div className=" ">
+                    <MdEmail className="text-[#FF6F3C] text-3xl" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
@@ -230,8 +230,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
-                    <MdPhone className="text-[#FF6F3C] text-2xl" />
+                  <div className=" ">
+                    <MdPhone className="text-[#FF6F3C] text-3xl" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Téléphone</h3>
@@ -239,8 +239,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
-                    <MdLocationOn className="text-[#FF6F3C] text-2xl" />
+                  <div className=" ">
+                    <MdLocationOn className="text-[#FF6F3C] text-3xl" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Adresse</h3>
