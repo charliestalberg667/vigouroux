@@ -51,7 +51,7 @@ export default function ContactForm({ language }: ContactFormProps) {
     console.log('Submitting contact form with data:', data);
 
     try {
-      const response = await fetch('/api/send', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
