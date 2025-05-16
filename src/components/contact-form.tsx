@@ -48,6 +48,8 @@ export default function ContactForm({ language }: ContactFormProps) {
       language: language || lang,
     };
 
+    console.log('Submitting contact form with data:', data);
+
     try {
       const response = await fetch('/api/send', {
         method: 'POST',
@@ -57,8 +59,11 @@ export default function ContactForm({ language }: ContactFormProps) {
         body: JSON.stringify(data),
       });
 
+      const responseData = await response.json();
+      console.log('Response from server:', responseData);
+
       if (!response.ok) {
-        throw new Error('Failed to send email');
+        throw new Error(responseData.error || 'Failed to send email');
       }
 
       toast({

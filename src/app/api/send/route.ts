@@ -6,10 +6,13 @@ const resend = new Resend('re_S8EjaB1Y_7FG4c79qeUXGDekSYfLFjMgz');
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    console.log('Received request body:', body);
+
     const { name, firstname, email, phone, address, message, language } = body;
 
     // Determine if this is a contact form or devis form submission
     const isContactForm = !firstname && !address && message;
+    console.log('Form type:', isContactForm ? 'contact' : 'devis');
 
     const subject = isContactForm
       ? language === 'fr' 
@@ -40,6 +43,8 @@ export async function POST(request: Request) {
         </div>
       `;
 
+    console.log('Sending email with subject:', subject);
+
     const data = await resend.emails.send({
       from: 'Vigouroux <onboarding@resend.dev>',
       to: 'cevceceecc@gmail.com',
@@ -48,9 +53,13 @@ export async function POST(request: Request) {
       replyTo: email,
     });
 
+    console.log('Email sent successfully:', data);
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ error }, { status: 500 });
+    console.error('Error in API route:', error);
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'An error occurred' },
+      { status: 500 }
+    );
   }
 } 
