@@ -1,7 +1,7 @@
 "use client";
 import { useLanguage } from "@/components/language-provider";
 import { FaUser, FaPhone, FaMapMarkerAlt, FaAt } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
 interface DevisFormProps {
@@ -38,6 +38,7 @@ export default function DevisForm({ language }: DevisFormProps) {
   const { toast } = useToast();
   const t = formContent[language || lang];
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -71,8 +72,8 @@ export default function DevisForm({ language }: DevisFormProps) {
         className: "bg-green-500 text-white",
       });
 
-      // Reset form
-      e.currentTarget.reset();
+      // Reset form using the ref
+      formRef.current?.reset();
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -88,7 +89,7 @@ export default function DevisForm({ language }: DevisFormProps) {
     <div className="w-full mt-12">
       <div className="bg-[#FF6F3C] rounded-3xl p-8 md:p-12 flex flex-col w-full">
         <h2 className="text-white text-4xl font-light mb-10 text-left">{t.title}</h2>
-        <form className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4" onSubmit={handleSubmit}>
+        <form ref={formRef} className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4" onSubmit={handleSubmit}>
           {/* Left column */}
           <div className="flex flex-col gap-4">
             <label className="text-white text-base mb-1 text-left">{t.name}</label>
