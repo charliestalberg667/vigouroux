@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       `;
 
     const data = await resend.emails.send({
-      from: 'Vigouroux.com',
+      from: 'Vigouroux <onboarding@resend.dev>',
       to: 'cevceceecc@gmail.com',
       subject: subject,
       html: html,
@@ -50,6 +50,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error });
+    console.error('Error sending email:', error);
+    return NextResponse.json({ error }, { status: 500 });
   }
 } 
