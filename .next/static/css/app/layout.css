@@ -1046,6 +1046,10 @@ a {
 .border-white\/20 {
   border-color: rgb(255 255 255 / 0.2);
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
 .border-t-transparent {
   border-top-color: transparent;
 }
