@@ -46,7 +46,7 @@ const Footer = () => {
                 <div className="p-3 rounded-xl bg-white shadow-md group-hover:shadow-lg transition-all duration-300 ease-in-out">
                   <MdLocationOn className="text-[#FF6F3C] text-2xl" />
                 </div>
-                <span className="group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">Maasdai 167, 1502 Halle, Belgique</span>
+                <span className="group-hover:text-[#FF6F3C] transition-colors duration-300 ease-in-out">Maasdal 167, 1502 Halle, Belgique</span>
               </div>
             </div>
           </div>
