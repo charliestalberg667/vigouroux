@@ -34,7 +34,7 @@ export default function Service1Page() {
       sections: [
         {
           title: "Types de toitures",
-          text: "Toitures en tuiles\n• Tuiles en terre cuite\n• Tuiles en béton\n\nToitures en ardoise\n• Ardoise naturelle\n• Ardoise synthétique\n\nToitures en métal\n• Zinc\n• Acier\n\nToitures plates\n• Bitume\n• EPDM",
+          text: "Toitures en tuiles\n• Tuiles en terre cuite\n• Tuiles en béton\n\nToitures en ardoise\n• Ardoise naturelle\n• Ardoise synthétique\n\nToitures en métal\n• Zinc\n• Acier\n\nToitures plates\n• Bitume\n",
         },
         {
           title: "Étapes d'une installation réussie",
@@ -75,7 +75,7 @@ export default function Service1Page() {
       sections: [
         {
           title: "Soorten daken",
-          text: "Pannendaken\n• Keramische pannen\n• Betonpannen\n\nLeien daken\n• Natuurlijke leien\n• Synthetische leien\n\nMetalen daken\n• Zink\n• Staal\n\nPlatte daken\n• Bitumen\n• EPDM",
+          text: "Pannendaken\n• Keramische pannen\n• Betonpannen\n\nLeien daken\n• Natuurlijke leien\n• Synthetische leien\n\nMetalen daken\n• Zink\n• Staal\n\nPlatte daken\n• Bitumen\n",
         },
         {
           title: "Stappen van een geslaagde installatie",
