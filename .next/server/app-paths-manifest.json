@@ -1,12 +1,3 @@
 {
-  "/api/contact/route": "app/api/contact/route.js",
-  "/api/send/route": "app/api/send/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/conditions/page": "app/conditions/page.js",
-  "/page": "app/page.js",
-  "/policy/page": "app/policy/page.js",
-  "/service1/page": "app/service1/page.js",
-  "/service2/page": "app/service2/page.js",
-  "/service3/page": "app/service3/page.js"
+  "/page": "app/page.js"
 }
