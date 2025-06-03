@@ -53,14 +53,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <div className="flex justify-end w-full">
           {buttonLink ? (
             <Link href={buttonLink} legacyBehavior>
-              <a className={buttonClassName || "inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-[#FF6F3C] font-medium text-base md:text-lg bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/40 transition-all duration-300 ease-in-out"}>
+              <a className={buttonClassName || "inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-[#FF6F3C] font-medium text-base md:text-lg bg-[#FF6F3C]/10 hover:bg-[#FF6F3C]/40 transition-all duration-300 ease-in-out"}>
                 {buttonText}
                 <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform duration-300 ease-in-out" />
               </a>
             </Link>
           ) : (
             <button
-              className={buttonClassName || "inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-[#FF6F3C] font-medium text-base md:text-lg bg-[#FF6F3C]/20 hover:bg-[#FF6F3C]/40 transition-all duration-300 ease-in-out"}
+              className={buttonClassName || "inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-[#FF6F3C] font-medium text-base md:text-lg bg-[#FF6F3C]/10 hover:bg-[#FF6F3C]/40 transition-all duration-300 ease-in-out"}
               onClick={handleScroll}
             >
               {buttonText}
